@@ -7,14 +7,14 @@ def get_video_id(url: str) -> str:
     return(url[-11:])
 
 def get_captions(video_id: str) -> str:
-    """Returns captions from a YouTube video in a word-separated list"""
-    captions = ytcc.get_transcript(video_id)
-    full_captions = ""
+	"""Returns captions from a YouTube video in a word-separated list"""
+	captions = ytcc.get_transcript(video_id)
+	full_captions = ""
 
-    for caption in captions:
-        full_captions += caption["text"] + " "
+	for caption in captions:
+		full_captions += caption["text"] + " "
 
-    return full_captions.lower()
+	return full_captions.lower()
 
 def generate_word_cloud(words: str) -> Image:
     """Generates a word cloud from a list of strings"""
