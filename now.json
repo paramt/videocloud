@@ -2,7 +2,14 @@
     "version": 2,
     "name": "python-flask",
     "builds": [
-        { "src": "src/**", "use": "@now/python" },
-        { "src": "public/**", "use": "@now/static" }
+        {
+            "src": "src/**",
+            "use": "@now/python",
+            "config": { "maxLambdaSize": "50mb" }
+        },
+        {
+            "src": "public/**",
+            "use": "@now/static"
+        }
     ]
 }
