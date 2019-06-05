@@ -18,11 +18,14 @@ def handle_missing_caption(e):
 
 @app.route('/', methods=['GET'])
 def home():
-	vid = request.args["video_id"]
-	out = f"out/{vid[-11:]}.png"
-	wordcloud = main(vid, out)
-	filepath = request.base_url + wordcloud
-	return Response(filepath, status = 201, mimetype = 'application/json')
+	try:
+		vid = request.args["video_id"]
+		out = f"out/{vid[-11:]}.png"
+		wordcloud = main(vid, out)
+		filepath = request.base_url + wordcloud
+		return Response(filepath, status = 201, mimetype = 'application/json')
+	except Exception as e:
+		return Response(f"Error 502: {e}", status = 502, mimetype = 'application/json')
 
 
 app.run()
