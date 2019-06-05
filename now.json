@@ -3,7 +3,7 @@
     "name": "python-flask",
     "builds": [
         {
-            "src": "src/**",
+            "src": "src/api.py",
             "use": "@now/python",
             "config": { "maxLambdaSize": "50mb" }
         },
