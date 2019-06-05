@@ -1,11 +1,12 @@
 {
     "version": 2,
-    "name": "python-flask",
+    "name": "VideoCloud",
     "builds": [
         {
             "src": "api.py",
             "use": "@now/python",
             "config": { "maxLambdaSize": "50mb" }
         }
-    ]
+    ],
+    "alias": ["videocloud"]
 }
