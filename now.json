@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "name": "python-flask",
+    "builds": [
+        { "src": "src/**", "use": "@now/python" },
+        { "src": "public/**", "use": "@now/static" }
+    ]
+}
