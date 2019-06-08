@@ -17,7 +17,7 @@ app = flask.Flask(__name__)
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
-def home():
+def home(path):
 	try:
 		vid = request.args["video_id"]
 		out = f"out/{vid[-11:]}.png"
