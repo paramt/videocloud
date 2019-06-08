@@ -6,7 +6,6 @@ from youtube_transcript_api import YouTubeTranscriptApi as ytcc
 import random
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
 
 @app.errorhandler(BadRequest)
 def handle_invalid_ytid(e):
