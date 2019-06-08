@@ -26,6 +26,3 @@ def home():
 		return Response(f"'status': 201, 'video': {vid}, 'wordcloud': {out}", status = 201, mimetype = 'application/json')
 	except Exception as e:
 		return Response(f"Error 502: {e}", status = 502, mimetype = 'application/json')
-
-
-app.run()
