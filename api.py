@@ -15,7 +15,8 @@ def handle_invalid_ytid(e):
 def handle_missing_caption(e):
 	return Response("{'status': 400, 'reason': The video either does not exist or does not have captions enabled}", status = 400, mimetype = 'application/json')
 
-@app.route('/', methods=['GET'])
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
 def home():
 	try:
 		vid = request.args["video_id"]
