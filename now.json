@@ -3,7 +3,7 @@
     "name": "VideoCloud",
     "builds": [
         {
-            "src": "api.py",
+            "src": "**/*.py",
             "use": "@now/python",
             "config": { "maxLambdaSize": "50mb" }
         }
