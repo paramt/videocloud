@@ -1,6 +1,6 @@
 import flask
 from flask import Response, request
-from src.main import main
+# from src.main import main
 from werkzeug.exceptions import BadRequest
 from youtube_transcript_api import YouTubeTranscriptApi as ytcc
 import random
@@ -21,9 +21,9 @@ def home():
 	try:
 		vid = request.args["video_id"]
 		out = f"out/{vid[-11:]}.png"
-		wordcloud = main(vid, out)
-		filepath = request.base_url + wordcloud
-		return Response(filepath, status = 201, mimetype = 'application/json')
+		# wordcloud = main(vid, out)
+		# filepath = request.base_url + wordcloud
+		return Response(f"'status': 201, 'video': {vid}, 'wordcloud': {out}", status = 201, mimetype = 'application/json')
 	except Exception as e:
 		return Response(f"Error 502: {e}", status = 502, mimetype = 'application/json')
 
