@@ -1,6 +1,6 @@
 import os
 import sys
-from VideoCloud.utilities import get_video_id, generate_word_cloud as word_cloud, get_captions as get_cc
+from videocloud.utilities import get_video_id, generate_word_cloud as word_cloud, get_captions as get_cc
 from youtube_transcript_api import YouTubeTranscriptApi as ytcc
 
 
