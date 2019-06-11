@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setuptools.setup(
     name="VideoCloud",
-    version="1.1",
+    version="1.1.1",
     url="https://github.com/paramt/VideoCloud",
     license="MIT",
     author="Param Thakkar",
@@ -18,7 +18,7 @@ setuptools.setup(
     install_requires=[
         "setuptools",
         "pillow==6.0.0",
-            "wordcloud==1.5.0",
+        "wordcloud==1.5.0",
         "youtube-transcript-api==0.1.4"
     ],
     python_requires=">= 3.6"
