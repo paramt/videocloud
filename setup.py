@@ -12,7 +12,7 @@ setuptools.setup(
     author_email="contact@param.me",
     description="A command line tool that generates word clouds from YouTube video captions",
     long_description=long_description,
-	long_description_content_type="text/markdown",
+        long_description_content_type="text/markdown",
     scripts=["./scripts/videocloud"],
     packages=["videocloud"],
     install_requires=[
