@@ -1,7 +1,7 @@
 from PIL.Image import Image
 from wordcloud import WordCloud
 from youtube_transcript_api import YouTubeTranscriptApi as ytcc
-from src import constants
+from videocloud import constants
 
 def get_video_id(url: str) -> str:
     return(url[-11:])
