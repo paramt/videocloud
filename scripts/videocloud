@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ ! $@ ]]; then
-    python -m videocloud -h
+	python -m videocloud -h
 else
-    python -m videocloud $@
+	python -m videocloud $@
 fi
