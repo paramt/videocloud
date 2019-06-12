@@ -4,7 +4,7 @@ from videocloud.utilities import get_video_id, generate_word_cloud as word_cloud
 from youtube_transcript_api import YouTubeTranscriptApi as ytcc
 
 
-def main(url: str, filepath):
+def videocloud(url: str, filepath):
 	try:
 		video_id = get_video_id(url)
 		captions = get_cc(video_id)
@@ -19,7 +19,7 @@ def main(url: str, filepath):
 
 	return os.path.abspath(filepath)
 
-if __name__ == "__main__":
+def main():
 	try:
 		video_id = sys.argv[1]
 	except:
@@ -31,5 +31,5 @@ if __name__ == "__main__":
 	except IndexError:
 		filepath = "wordcloud.png"
 
-	wordcloud = main(video_id, filepath)
+	wordcloud = videocloud(video_id, filepath)
 	print(f"Wordcloud created in {wordcloud}")

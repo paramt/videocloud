@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setuptools.setup(
     name="VideoCloud",
-    version="1.1.1",
+    version="1.2.0",
     url="https://github.com/paramt/VideoCloud",
     license="MIT",
     author="Param Thakkar",
@@ -13,7 +13,6 @@ setuptools.setup(
     description="A command line tool that generates word clouds from YouTube video captions",
     long_description=long_description,
 	long_description_content_type="text/markdown",
-    scripts=["./scripts/videocloud"],
     packages=["videocloud"],
     install_requires=[
         "setuptools",
@@ -21,5 +20,10 @@ setuptools.setup(
         "wordcloud==1.5.0",
         "youtube-transcript-api==0.1.4"
     ],
-    python_requires=">= 3.6"
+    python_requires=">= 3.6",
+	entry_points={
+        'console_scripts': [
+            'videocloud=videocloud.main:main'
+        ]
+    }
 )
