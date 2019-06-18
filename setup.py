@@ -4,7 +4,7 @@ with open("README.md") as f:
     long_description = f.read()
 
 setuptools.setup(
-    name="VideoCloud",
+    name="videocloud",
     version="1.2.0",
     url="https://github.com/paramt/VideoCloud",
     license="MIT",
