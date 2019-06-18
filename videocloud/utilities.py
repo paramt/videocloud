@@ -21,7 +21,6 @@ def generate_word_cloud(words: str) -> Image:
     wordcloud = WordCloud(
         width = 1000,
         height = 500,
-        font_path = f"assets/fonts/{constants.FONT}",
         background_color = constants.BG).generate(words)
     image = wordcloud.to_image()
     return image
