@@ -10,6 +10,8 @@ Generate word clouds from YouTube video captions
 pip install videocloud
 ```
 
+*Note: you will require a C compiler for the installation process.*
+
 ## Usage
 
 ```
