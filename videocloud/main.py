@@ -9,7 +9,11 @@ def get_video_id(url: str) -> str:
 
 def get_cc(video_id: str) -> str:
 	"""Returns captions from a YouTube video in a word-separated list"""
-	captions = ytcc.get_transcript(video_id)
+	try:
+		captions = ytcc.get_transcript(video_id, languages=["en"])
+	except:
+		captions = ytcc.get_transcript(video_id)
+
 	full_captions = ""
 
 	for caption in captions:
@@ -22,7 +26,6 @@ def wordcloud(words: str) -> Image:
 	wordcloud = WordCloud(
 		width = 1000,
 		height = 500,
-		# font_path = "assets/fonts/NotoSans/NotoSans.ttf",
 		background_color = "#d1d1d1").generate(words)
 
 	image = wordcloud.to_image()
