@@ -37,18 +37,23 @@ def get_cc(video_id: str) -> str:
 
 def wordcloud(words: str) -> Image:
 	"""Generates a word cloud from a list of strings"""
-	font = get_font("https://github.com/paramt/videocloud/blob/master/assets/NotoSans.ttf?raw=true")
+	try:
+		font = get_font("https://github.com/paramt/videocloud/blob/master/assets/NotoSans.ttf?raw=true")
+		wordcloud = WordCloud(
+			width = 1000,
+			height = 500,
+			font_path = font,
+			background_color = "#d1d1d1").generate(words)
+		image = wordcloud.to_image()
 
-	wordcloud = WordCloud(
-		width = 1000,
-		height = 500,
-		font_path = font,
-		background_color = "#d1d1d1").generate(words)
+	except Exception as e:
+		print(f"There was an error generating the wordcloud: {e}")
+		exit()
 
-	image = wordcloud.to_image()
-	delete_font(font)
+	finally:
+		delete_font(font)
+
 	return image
-
 
 def videocloud(url: str, filepath):
 	try:
