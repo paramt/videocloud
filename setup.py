@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setuptools.setup(
     name="videocloud",
-    version="2.2",
+    version="2.3",
     url="https://github.com/paramt/VideoCloud",
     license="MIT",
     author="Param Thakkar",
