@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="assets/logos/no-border.png" width="250px" align="center">
+    <img alt="logo" src="assets/logos/red-border.png" width="250px" align="center">
     <h1 align="center">VideoCloud</h1>
     <p align="center">
       <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/paramt/videocloud.svg"></a>
