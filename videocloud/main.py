@@ -3,6 +3,20 @@ import sys
 from PIL.Image import Image
 from wordcloud import WordCloud
 from youtube_transcript_api import YouTubeTranscriptApi as ytcc
+import urllib.request
+
+def get_font(url: str) -> str:
+	filepath = "tempfont.ttf"
+	urllib.request.urlretrieve(url, filepath)
+	return filepath
+
+def delete_font(filepath: str) -> bool:
+	try:
+		os.remove(filepath)
+	except:
+		return False
+	else:
+		return True
 
 def get_video_id(url: str) -> str:
     return(url[-11:])
@@ -23,12 +37,16 @@ def get_cc(video_id: str) -> str:
 
 def wordcloud(words: str) -> Image:
 	"""Generates a word cloud from a list of strings"""
+	font = get_font("https://github.com/paramt/videocloud/blob/master/assets/NotoSans.ttf?raw=true")
+
 	wordcloud = WordCloud(
 		width = 1000,
 		height = 500,
+		font_path = font,
 		background_color = "#d1d1d1").generate(words)
 
 	image = wordcloud.to_image()
+	delete_font(font)
 	return image
 
 
