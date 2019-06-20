@@ -37,8 +37,9 @@ def get_cc(video_id: str) -> str:
 
 def wordcloud(words: str) -> Image:
 	"""Generates a word cloud from a list of strings"""
+	font = get_font("https://github.com/paramt/videocloud/blob/master/assets/NotoSans.ttf?raw=true")
+
 	try:
-		font = get_font("https://github.com/paramt/videocloud/blob/master/assets/NotoSans.ttf?raw=true")
 		wordcloud = WordCloud(
 			width = 1000,
 			height = 500,
