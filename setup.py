@@ -1,7 +1,27 @@
 import setuptools
 
-with open("README.md") as f:
-    long_description = f.read()
+long_description = '''
+# VideoCloud
+[![License](https://img.shields.io/github/license/paramt/videocloud.svg)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/videocloud.svg)](https://pypi.org/project/VideoCloud/)
+
+Generate word clouds from YouTube video captions
+
+## Installation
+```
+pip install videocloud
+```
+*Note: A C compiler is required for the installation process.*
+
+## Usage
+```
+videocloud <link to youtube video> [filepath]
+```
+If no filepath is given, the wordcloud will be generated in `./videocloud.png`
+
+## Development
+This project is maintained by [paramt](https://github.com/paramt) on [GitHub](https://github.com/paramt/videocloud).
+'''
 
 setuptools.setup(
     name="videocloud",
