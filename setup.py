@@ -25,7 +25,7 @@ This project is maintained by [paramt](https://github.com/paramt) on [GitHub](ht
 
 setuptools.setup(
     name="videocloud",
-    version="2.3",
+    version="2.3.1",
     url="https://github.com/paramt/VideoCloud",
     license="MIT",
     author="Param Thakkar",
