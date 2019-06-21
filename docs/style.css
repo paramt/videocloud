@@ -104,11 +104,36 @@ code{
     border-radius: 5px;
 }
 
-@media only screen and (min-width: 600px) {
-    body {
-      background-color: lightblue;
+@media only screen and (max-height: 600px) {
+    .title h1{
+        font-size: 2.6em;
     }
-  }
+    .title p{
+      font-size: 1.3em;
+    }
+
+    .title img{
+        width: 300px;
+    }
+
+    #arrow{
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .main .content{
+        width: auto;
+    }
+
+    .main h1{
+        font-size: 2.6em;
+    }
+
+    .main p, pre{
+      font-size: 1.3em;
+    }
+}
 
 /**
     Following code taken from animate.css
