@@ -2,9 +2,9 @@
     <img alt="logo" src="assets/logos/red-border.png" width="250px" align="center">
     <h1 align="center">VideoCloud</h1>
     <p align="center">
-      <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/paramt/videocloud.svg"></a>
       <a href="https://pypi.org/project/VideoCloud"><img alt="PyPI" src="https://img.shields.io/pypi/v/videocloud.svg"></a>
       <a href="https://requires.io/github/paramt/videocloud/requirements/?branch=master"><img src="https://requires.io/github/paramt/videocloud/requirements.svg?branch=master" alt="Requirements Status" /></a>
+      <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/paramt/videocloud.svg"></a>
     </p>
     <h4 align="center">Generate word clouds from YouTube videos</h4>
 </p>
