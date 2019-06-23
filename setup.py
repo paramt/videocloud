@@ -37,7 +37,7 @@ setuptools.setup(
     install_requires=[
         "pillow==6.0.0",
         "wordcloud==1.5.0",
-        "youtube-transcript-api==0.1.4"
+        "youtube-transcript-api==0.1.5"
     ],
     python_requires=">= 3.6",
 	entry_points={
