@@ -74,7 +74,7 @@ svg {
     justify-content: center;
     align-items: center;
     background-color: var(--main-color);
-    padding: 10vw 0;
+    padding: 10vw 0 10vh 0;
 }
 
 .main .content{
@@ -83,11 +83,12 @@ svg {
 }
 
 .main h1{
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 .main p{
-    font-size: 1.5em;
+    font-size: 1.4em;
+    line-height: 1.6
 }
 
 pre{
@@ -96,6 +97,13 @@ pre{
     padding: 15px;
     font-size: 1.5em;
     border-radius: 5px;
+
+    /* Wrap long lines */
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }
 
 code{
