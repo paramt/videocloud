@@ -21,10 +21,10 @@ def delete_font(filepath: str) -> bool:
 def get_video_id(url: str) -> str:
     return(url[-11:])
 
-def get_cc(video_id: str) -> str:
+def get_cc(video_id: str, language: list) -> str:
 	"""Returns captions from a YouTube video in a word-separated list"""
 	try:
-		captions = ytcc.get_transcript(video_id, languages=["en"])
+		captions = ytcc.get_transcript(video_id, languages=language)
 	except:
 		captions = ytcc.get_transcript(video_id)
 
@@ -35,9 +35,9 @@ def get_cc(video_id: str) -> str:
 
 	return full_captions.lower()
 
-def wordcloud(words: str) -> Image:
+def wordcloud(words: str, font: str) -> Image:
 	"""Generates a word cloud from a list of strings"""
-	font = get_font("https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf?raw=true")
+	font = get_font(font)
 
 	try:
 		wordcloud = WordCloud(
@@ -56,11 +56,11 @@ def wordcloud(words: str) -> Image:
 
 	return image
 
-def videocloud(url: str, filepath):
+def videocloud(url: str, filepath: str, language: list, font: str):
 	try:
 		video_id = get_video_id(url)
-		captions = get_cc(video_id)
-		image = wordcloud(captions)
+		captions = get_cc(video_id, language)
+		image = wordcloud(captions, font)
 		image.save(filepath)
 
 	except ytcc.CouldNotRetrieveTranscript:
@@ -84,5 +84,15 @@ def main():
 	except IndexError:
 		filepath = "wordcloud.png"
 
-	wordcloud = videocloud(video_id, filepath)
+	try:
+		language = [sys.argv[3]]
+	except IndexError:
+		language = ["en"]
+
+	try:
+		font = sys.argv[4]
+	except IndexError:
+		font = "https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf?raw=true"
+
+	wordcloud = videocloud(video_id, filepath, language, font)
 	print(f"Wordcloud created in {wordcloud}")
