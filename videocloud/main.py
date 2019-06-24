@@ -48,8 +48,8 @@ def wordcloud(words: str, font: str) -> Image:
 		image = wordcloud.to_image()
 
 	except Exception as e:
-		print(f"There was an error generating the wordcloud: {e}")
-		exit()
+		print(f"There was an error generating the wordcloud")
+		sys.exit(1)
 
 	finally:
 		delete_font(font)
@@ -65,10 +65,10 @@ def videocloud(url: str, filepath: str, language: list, font: str):
 
 	except ytcc.CouldNotRetrieveTranscript:
 		print("The specified video either doesn't exist or doesn't have captions enabled. Please try again")
-		exit()
+		sys.exit(1)
 	except IOError as e:
-		print(f"There was an error saving the wordcloud file: {e}")
-		exit()
+		print(f"There was an error saving the wordcloud file")
+		sys.exit(1)
 
 	return os.path.abspath(filepath)
 
@@ -77,7 +77,7 @@ def main():
 		video_id = sys.argv[1]
 	except:
 		print("Please specify a YouTube video link or video ID")
-		exit()
+		sys.exit(1)
 
 	try:
 		filepath = sys.argv[2]
