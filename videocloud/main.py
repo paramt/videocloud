@@ -48,7 +48,7 @@ def wordcloud(words: str, font: str) -> Image:
 		image = wordcloud.to_image()
 
 	except Exception:
-		print(f"There was an error generating the wordcloud")
+		print(f"There was an unknown error generating the wordcloud.")
 		sys.exit(1)
 
 	finally:
@@ -64,10 +64,10 @@ def videocloud(url: str, filepath: str, language: list, font: str):
 		image.save(filepath)
 
 	except ytcc.CouldNotRetrieveTranscript:
-		print("The specified video either doesn't exist or doesn't have captions enabled. Please try again")
+		print("The specified video either doesn't exist or doesn't have captions enabled. For more help visit https://www.param.me/videocloud#usage")
 		sys.exit(1)
 	except IOError:
-		print(f"There was an error saving the wordcloud file")
+		print(f"There was an error saving the wordcloud file. For more help visit https://www.param.me/videocloud#usage")
 		sys.exit(1)
 
 	return os.path.abspath(filepath)
@@ -76,7 +76,7 @@ def main():
 	try:
 		video_id = sys.argv[1]
 	except:
-		print("Please specify a YouTube video link or video ID")
+		print("Please specify a YouTube video link or video ID. For more help visit https://www.param.me/videocloud#usage")
 		sys.exit(1)
 
 	try:
