@@ -47,7 +47,7 @@ def wordcloud(words: str, font: str) -> Image:
 			background_color = "#d1d1d1").generate(words)
 		image = wordcloud.to_image()
 
-	except Exception as e:
+	except Exception:
 		print(f"There was an error generating the wordcloud")
 		sys.exit(1)
 
@@ -66,7 +66,7 @@ def videocloud(url: str, filepath: str, language: list, font: str):
 	except ytcc.CouldNotRetrieveTranscript:
 		print("The specified video either doesn't exist or doesn't have captions enabled. Please try again")
 		sys.exit(1)
-	except IOError as e:
+	except IOError:
 		print(f"There was an error saving the wordcloud file")
 		sys.exit(1)
 
