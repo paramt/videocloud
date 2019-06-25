@@ -1,7 +1,7 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: ''
+about: Suggest an idea for VideoCloud
+title: 'Feature request: '
 labels: enhancement
 assignees: paramt
 
