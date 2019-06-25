@@ -7,7 +7,7 @@ assignees: paramt
 
 ---
 
-**Describe the bug**
+**Description**
 A clear and concise description of what the bug is.
 
 **Environment**
