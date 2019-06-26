@@ -21,6 +21,11 @@ pip install videocloud
 ## Usage
 
 ```
-videocloud <link to youtube video> [filepath]
+videocloud <link to YouTube video> [filepath] [language code] [font]
 ```
-If no filepath is given, the wordcloud will be generated in `./videocloud.png`
+
+If no filepath is given, the wordcloud will be generated as `videocloud.png` in the current directory. 
+The lanuage code defaults to `en` and the fontpath defaults to [Noto Sans](assets/fonts/NotoSans).
+To use a custom font, provide the HTTP link for its TTF file
+
+
