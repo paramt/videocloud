@@ -29,3 +29,6 @@ The lanuage code defaults to `en` and the fontpath defaults to [Noto Sans](asset
 To use a custom font, provide the HTTP link for its TTF file
 
 
+## License 
+
+All the code in this repo is licensed under the [MIT License](LICENSE) unless otherwise specified. You are free to use, modify, and distribute the source code as long as you include the original license file. [Some fonts](assets/fonts) are licensed separately under the [SIL Open Font License](https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/SIL%20Open%20Font%20License.txt). 
