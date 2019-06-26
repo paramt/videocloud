@@ -63,7 +63,7 @@ a:hover{
 svg {
     display: block;
     position: absolute;
-    bottom: -10vw;
+    top: 100vh;
     width: 100%;
     height: 10vw;
     fill: var(--title-color)
