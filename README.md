@@ -5,6 +5,7 @@
       <a href="https://travis-ci.org/paramt/videocloud"><img alt="Build Status" src="https://travis-ci.org/paramt/videocloud.svg?branch=master"></a>
       <a href="https://pypi.org/project/VideoCloud"><img alt="PyPI" src="https://img.shields.io/pypi/v/videocloud.svg"></a>
       <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/paramt/videocloud.svg?"></a>
+      <a href="https://www.codefactor.io/repository/github/paramt/videocloud"><img alt="Codefactor" src="https://www.codefactor.io/repository/github/paramt/videocloud/badge"></a>
       <br>
       <a href="https://requires.io/github/paramt/videocloud/requirements/?branch=master"><img src="https://requires.io/github/paramt/videocloud/requirements.svg?branch=master" alt="Requirements Status"/></a>
       <a href="https://github.com/paramt/videocloud/commits/"><img alt="Last Commit" src="https://img.shields.io/github/last-commit/paramt/videocloud.svg"></a>
