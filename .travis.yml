@@ -11,4 +11,4 @@ install:
     - python setup.py install
 
 script:
-    - videocloud https://www.youtube.com/watch?v=MHTizZ_XcUM
+    - tests/success.sh
