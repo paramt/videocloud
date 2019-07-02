@@ -14,3 +14,9 @@ videocloud https://www.youtube.com/watch\?v=MHTizZ_XcUM 3.jpeg
 
 # Custom filepath (BMP)
 videocloud https://www.youtube.com/watch\?v=MHTizZ_XcUM 4.bmp
+
+# Custom language code (English)
+videocloud https://www.youtube.com/watch\?v=MHTizZ_XcUM 5.png en
+
+# Custom language code (Spanish)
+videocloud https://www.youtube.com/watch\?v=MHTizZ_XcUM 6.png es
