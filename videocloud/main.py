@@ -45,7 +45,8 @@ def get_cc(video_id: str, language: list) -> str:
 def wordcloud(words: str, font: str) -> Image.Image:
 	"""Generates a word cloud from a list of strings"""
 	font = get_font(font)
-	mask = np.array(Image.open(get_mask("https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true")))
+	mask = get_mask("https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true")
+	mask_data = np.array(Image.open(mask))
 
 	try:
 		wordcloud = WordCloud(
@@ -53,7 +54,7 @@ def wordcloud(words: str, font: str) -> Image.Image:
 			height = 500,
 			font_path = font,
 			background_color = "#d1d1d1",
-			mask = mask).generate(words)
+			mask = mask_data).generate(words)
 		image = wordcloud.to_image()
 
 	except Exception:
