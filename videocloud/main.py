@@ -6,13 +6,7 @@ from youtube_transcript_api import YouTubeTranscriptApi as ytcc
 import urllib.request
 import numpy as np
 
-def get_mask(url: str) -> str:
-	filepath = "tempmask.png"
-	urllib.request.urlretrieve(url, filepath)
-	return filepath
-
-def get_font(url: str) -> str:
-	filepath = "tempfont.ttf"
+def download(url: str, filepath: str) -> str:
 	urllib.request.urlretrieve(url, filepath)
 	return filepath
 
@@ -42,8 +36,8 @@ def get_cc(video_id: str, language: list) -> str:
 
 def wordcloud(words: str, font: str) -> Image.Image:
 	"""Generates a word cloud from a list of strings"""
-	font = get_font(font)
-	mask = get_mask("https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true")
+	font = download(font, "tempfont.ttf")
+	mask = download("https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true", "tempmask.png")
 	mask_data = np.array(Image.open(mask))
 
 	try:
