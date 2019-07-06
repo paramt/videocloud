@@ -12,3 +12,4 @@ install:
 
 script:
     - bash tests/success.sh
+    - bash tests/error.sh
