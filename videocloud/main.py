@@ -1,9 +1,15 @@
 import os
 import sys
-from PIL.Image import Image
+import PIL.Image as Image
 from wordcloud import WordCloud
 from youtube_transcript_api import YouTubeTranscriptApi as ytcc
 import urllib.request
+import numpy as np
+
+def get_mask(url: str) -> str:
+	filepath = "tempmask.png"
+	urllib.request.urlretrieve(url, filepath)
+	return filepath
 
 def get_font(url: str) -> str:
 	filepath = "tempfont.ttf"
@@ -35,16 +41,18 @@ def get_cc(video_id: str, language: list) -> str:
 
 	return full_captions.lower()
 
-def wordcloud(words: str, font: str) -> Image:
+def wordcloud(words: str, font: str) -> Image.Image:
 	"""Generates a word cloud from a list of strings"""
 	font = get_font(font)
+	mask = np.array(Image.open(get_mask("https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true")))
 
 	try:
 		wordcloud = WordCloud(
 			width = 1000,
 			height = 500,
 			font_path = font,
-			background_color = "#d1d1d1").generate(words)
+			background_color = "#d1d1d1",
+			mask = mask).generate(words)
 		image = wordcloud.to_image()
 
 	except Exception:
