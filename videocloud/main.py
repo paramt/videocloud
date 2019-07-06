@@ -7,8 +7,13 @@ import urllib.request
 import numpy as np
 
 def download(url: str, filepath: str) -> str:
-	urllib.request.urlretrieve(url, filepath)
-	return filepath
+	try:
+		urllib.request.urlretrieve(url, filepath)
+	except:
+		print("Unable to download the needed assets to generate the wordcloud")
+		print("Please make sure that you have provided the correct URLs to any fonts/masks")
+	else:
+		return filepath
 
 def delete(filepaths: list) -> bool:
 	for path in filepaths:
