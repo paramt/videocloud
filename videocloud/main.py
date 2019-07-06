@@ -21,9 +21,7 @@ def delete(filepaths: list) -> bool:
 		try:
 			os.remove(path)
 		except:
-			return False
-		else:
-			return True
+			print(f"Unable to remove {path} while cleaning up")
 
 def get_video_id(url: str) -> str:
     return(url[-11:])
