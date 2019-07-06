@@ -52,7 +52,9 @@ def wordcloud(words: str, font: str) -> Image.Image:
 			height = 500,
 			font_path = font,
 			background_color = "#d1d1d1",
-			mask = mask_data).generate(words)
+			mask = mask_data,
+		).generate(words)
+
 		image = wordcloud.to_image()
 
 	except Exception:
