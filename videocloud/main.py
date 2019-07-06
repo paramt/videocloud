@@ -16,7 +16,7 @@ def get_font(url: str) -> str:
 	urllib.request.urlretrieve(url, filepath)
 	return filepath
 
-def delete_font(filepath: str) -> bool:
+def delete(filepath: str) -> bool:
 	try:
 		os.remove(filepath)
 	except:
@@ -60,7 +60,8 @@ def wordcloud(words: str, font: str) -> Image.Image:
 		sys.exit(1)
 
 	finally:
-		delete_font(font)
+		delete(font)
+		delete(mask)
 
 	return image
 
