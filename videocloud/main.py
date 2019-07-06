@@ -61,7 +61,7 @@ def wordcloud(words: str, font: str) -> Image.Image:
 		sys.exit(1)
 
 	finally:
-		delete(font, mask)
+		delete([font, mask])
 
 	return image
 
