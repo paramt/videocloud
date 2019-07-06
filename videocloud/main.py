@@ -16,13 +16,14 @@ def get_font(url: str) -> str:
 	urllib.request.urlretrieve(url, filepath)
 	return filepath
 
-def delete(filepath: str) -> bool:
-	try:
-		os.remove(filepath)
-	except:
-		return False
-	else:
-		return True
+def delete(filepaths: list) -> bool:
+	for path in filepaths:
+		try:
+			os.remove(path)
+		except:
+			return False
+		else:
+			return True
 
 def get_video_id(url: str) -> str:
     return(url[-11:])
@@ -60,8 +61,7 @@ def wordcloud(words: str, font: str) -> Image.Image:
 		sys.exit(1)
 
 	finally:
-		delete(font)
-		delete(mask)
+		delete(font, mask)
 
 	return image
 
