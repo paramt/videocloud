@@ -41,5 +41,5 @@ do
     # Custom mask (YouTube logo)
     videocloud $video 10.png en \
     https://github.com/paramt/videocloud/blob/master/assets/fonts/PressStart2P/PressStart2P-Regular.ttf\?raw=true \
-    https://github.com/paramt/videocloud/blob/master/assets/masks/youtube.png\?raw=true
+    https://github.com/paramt/videocloud/blob/master/assets/masks/youtube.jpg\?raw=true
 done
