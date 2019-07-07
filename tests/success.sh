@@ -34,12 +34,12 @@ do
     https://github.com/paramt/videocloud/blob/master/assets/fonts/PressStart2P/PressStart2P-Regular.ttf\?raw=true
 
     # Custom mask (Cloud)
-    videocloud $video 7.png en \
+    videocloud $video 8.png en \
     https://github.com/paramt/videocloud/blob/master/assets/fonts/PressStart2P/PressStart2P-Regular.ttf\?raw=true \
     https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png\?raw=true
 
     # Custom mask (YouTube logo)
-    videocloud $video 7.png en \
+    videocloud $video 9.png en \
     https://github.com/paramt/videocloud/blob/master/assets/fonts/PressStart2P/PressStart2P-Regular.ttf\?raw=true \
     https://github.com/paramt/videocloud/blob/master/assets/masks/youtube.png\?raw=true
 done
