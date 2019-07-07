@@ -40,10 +40,10 @@ def get_cc(video_id: str, language: list) -> str:
 
 	return full_captions.lower()
 
-def wordcloud(words: str, font: str) -> Image.Image:
+def wordcloud(words: str, font: str, mask: str) -> Image.Image:
 	"""Generates a word cloud from a list of strings"""
 	font = download(font, "tempfont.ttf")
-	mask = download("https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true", "tempmask.png")
+	mask = download(mask, "tempmask.png")
 	mask_data = np.array(Image.open(mask))
 
 	try:
@@ -66,11 +66,11 @@ def wordcloud(words: str, font: str) -> Image.Image:
 
 	return image
 
-def videocloud(url: str, filepath: str, language: list, font: str):
+def videocloud(url: str, filepath: str, language: list, font: str, mask: str):
 	try:
 		video_id = get_video_id(url)
 		captions = get_cc(video_id, language)
-		image = wordcloud(captions, font)
+		image = wordcloud(captions, font, mask)
 		image.save(filepath)
 
 	except ytcc.CouldNotRetrieveTranscript:
@@ -104,5 +104,10 @@ def main():
 	except IndexError:
 		font = "https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf?raw=true"
 
-	wordcloud = videocloud(video_id, filepath, language, font)
+	try:
+		mask = sys.argv[5]
+	except IndexError:
+		mask = "https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true"
+
+	wordcloud = videocloud(video_id, filepath, language, font, mask)
 	print(f"Wordcloud created in {wordcloud}")
