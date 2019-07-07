@@ -16,12 +16,12 @@ def download(url: str, filepath: str) -> str:
 	else:
 		return filepath
 
-def delete(filepaths: list) -> bool:
-	for path in filepaths:
+def delete(*files) -> bool:
+	for f in files:
 		try:
-			os.remove(path)
+			os.remove(f)
 		except:
-			print(f"Unable to remove {path} while cleaning up")
+			print(f"Unable to remove {f} while cleaning up")
 
 def get_video_id(url: str) -> str:
     return(url[-11:])
@@ -62,7 +62,7 @@ def wordcloud(words: str, font: str) -> Image.Image:
 		sys.exit(1)
 
 	finally:
-		delete([font, mask])
+		delete(font, mask)
 
 	return image
 
