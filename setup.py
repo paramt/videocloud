@@ -19,7 +19,8 @@ videocloud <link to youtube video> [filepath] [language code] [font]
 ```
 If no filepath is given, the wordcloud will be generated as `videocloud.png`.
 The lanuage code defaults to `en` and the fontpath defaults to [Noto Sans](https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf)
-To use a custom font, provide the HTTP link for its TTF file
+To use a custom font, provide the HTTP link for its TTF file. Similarly, you can provide an HTTP link to a PNG mask file. The mask defaults to
+[a generic cloud](https://github.com/paramt/videocloud/blob/v2.5/assets/masks/cloud.png).
 
 ## Development
 This project is maintained by [paramt](https://github.com/paramt) on [GitHub](https://github.com/paramt/videocloud).
@@ -27,7 +28,7 @@ This project is maintained by [paramt](https://github.com/paramt) on [GitHub](ht
 
 setuptools.setup(
     name="videocloud",
-    version="2.4",
+    version="2.5",
     url="https://github.com/paramt/VideoCloud",
     license="MIT",
     author="Param Thakkar",
