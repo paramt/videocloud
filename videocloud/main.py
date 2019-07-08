@@ -10,7 +10,7 @@ def download(url: str, filepath: str) -> str:
 	try:
 		urllib.request.urlretrieve(url, filepath)
 	except:
-		print("Unable to download the needed assets to generate the wordcloud")
+		print("Unable to download the needed assets to generate the videocloud")
 		print("Please make sure that you have provided the correct URLs to any fonts/masks")
 		sys.exit(1)
 	else:
@@ -58,7 +58,7 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
 		image = wordcloud.to_image()
 
 	except Exception:
-		print(f"There was an unknown error generating the wordcloud.")
+		print(f"There was an unknown error generating the videocloud.")
 		sys.exit(1)
 
 	finally:
@@ -77,7 +77,7 @@ def videocloud(url: str, filepath: str, language: list, font: str, mask: str):
 		print("The specified video either doesn't exist or doesn't have captions enabled. For more help visit https://www.param.me/videocloud#usage")
 		sys.exit(1)
 	except IOError:
-		print(f"There was an error saving the wordcloud file. For more help visit https://www.param.me/videocloud#usage")
+		print(f"There was an error saving the videocloud. For more help visit https://www.param.me/videocloud#usage")
 		sys.exit(1)
 
 	return os.path.abspath(filepath)
@@ -92,7 +92,7 @@ def main():
 	try:
 		filepath = sys.argv[2]
 	except IndexError:
-		filepath = "wordcloud.png"
+		filepath = "videocloud.png"
 
 	try:
 		language = [sys.argv[3]]
@@ -110,4 +110,4 @@ def main():
 		mask = "https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true"
 
 	wordcloud = videocloud(video_id, filepath, language, font, mask)
-	print(f"Wordcloud created in {wordcloud}")
+	print(f"Videocloud created in {wordcloud}")
