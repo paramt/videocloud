@@ -66,12 +66,11 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
 
 	return image
 
-def videocloud(url: str, filepath: str, language: list, font: str, mask: str):
+def videocloud(url: str, language: list, font: str, mask: str):
 	try:
 		video_id = get_video_id(url)
 		captions = get_cc(video_id, language)
 		image = wordcloud(captions, font, mask)
-		image.save(filepath)
 
 	except ytcc.CouldNotRetrieveTranscript:
 		print("The specified video either doesn't exist or doesn't have captions enabled. For more help visit https://www.param.me/videocloud#usage")
@@ -80,7 +79,7 @@ def videocloud(url: str, filepath: str, language: list, font: str, mask: str):
 		print(f"There was an error saving the videocloud. For more help visit https://www.param.me/videocloud#usage")
 		sys.exit(1)
 
-	return os.path.abspath(filepath)
+	return image
 
 def main():
 	try:
@@ -109,5 +108,8 @@ def main():
 	except IndexError:
 		mask = "https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true"
 
-	wordcloud = videocloud(video_id, filepath, language, font, mask)
+	wordcloud = videocloud(video_id, language, font, mask)
+	filepath = os.path.abspath(filepath)
+	wordcloud.save(filepath)
+
 	print(f"Videocloud created in {wordcloud}")
