@@ -112,4 +112,4 @@ def main():
 	filepath = os.path.abspath(filepath)
 	wordcloud.save(filepath)
 
-	print(f"Videocloud created in {wordcloud}")
+	print(f"Videocloud created in {filepath}")
