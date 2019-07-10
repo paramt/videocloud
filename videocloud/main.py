@@ -1,10 +1,10 @@
 import os
 import sys
+import urllib.request
+import numpy as np
 import PIL.Image as Image
 from wordcloud import WordCloud
 from youtube_transcript_api import YouTubeTranscriptApi as ytcc
-import urllib.request
-import numpy as np
 
 def download(url: str, filepath: str) -> str:
 	try:
