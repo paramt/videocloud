@@ -60,7 +60,7 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
 
 		image = wordcloud.to_image()
 
-	except Exception:
+	except:
 		print(f"There was an unknown error generating the videocloud.")
 		sys.exit(1)
 
