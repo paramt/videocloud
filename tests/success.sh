@@ -32,7 +32,7 @@ do
     videocloud --url=$video --filepath=8.png --font=https://github.com/paramt/videocloud/blob/master/assets/fonts/PressStart2P/PressStart2P-Regular.ttf\?raw=true
 
     # Custom mask (Cloud)
-    videocloud --url=$video --filepath=9.png en --mask=https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png\?raw=true
+    videocloud --url=$video --filepath=9.png --mask=https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png\?raw=true
 
     # Custom mask (YouTube logo)
     videocloud --url=$video --filepath=10.png --mask=https://github.com/paramt/videocloud/blob/master/assets/masks/youtube.jpg\?raw=true
