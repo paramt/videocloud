@@ -1,6 +1,7 @@
 import os
 import sys
 import urllib.request
+import click
 import numpy as np
 import PIL.Image as Image
 from wordcloud import WordCloud
@@ -64,6 +65,17 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
 		delete(font, mask)
 
 	return image
+
+@click.command()
+@click.option("--url", type=str, help="Link to a YouTube video", required=True)
+@click.option("--filepath", default="videocloud.png", help="Where on the disk to save the videocloud")
+@click.option("--language", default="en", help="Language code of the captions")
+@click.option("--font",
+              default="https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf?raw=true",
+			  help="Link to a TTF font file")
+@click.option("--mask",
+              default="https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true",
+			  help="Link to a PNG mask file")
 
 def videocloud(url: str, filepath:str, language: list, font: str, mask: str):
 	try:
