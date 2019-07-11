@@ -5,41 +5,39 @@ videos=(https://www.youtube.com/watch\?v=MHTizZ_XcUM)
 for video in "${videos[@]}"
 do
     # Defaults
-    videocloud $video
+    videocloud --url=$video
 
     # Custom filepath (PNG)
-    videocloud $video 1.png
+    videocloud --url=$video --filepath=1.png
 
     # Custom filepath (JPG)
-    videocloud $video 2.jpg
+    videocloud --url=$video --filepath=2.jpg
 
     # Custom filepath (JPEG)
-    videocloud $video 3.jpeg
+    videocloud --url=$video --filepath=3.jpeg
 
     # Custom filepath (BMP)
-    videocloud $video 4.bmp
+    videocloud --url=$video --filepath=4.bmp
 
     # Custom language code (English)
-    videocloud $video 5.png en
+    videocloud --url=$video --filepath=5.png --language=en
 
     # Custom language code (Spanish)
-    videocloud $video 6.png es
+    videocloud --url=$video --filepath=6.png --language=es
 
     # Custom font (Noto Sans)
-    videocloud $video 7.png en \
+    videocloud --url=$video --filepath=7.png --font=\
     https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf?raw=true
 
     # Custom font (Press Start 2P)
-    videocloud $video 8.png en \
+    videocloud --url=$video --filepath=8.png --font=\
     https://github.com/paramt/videocloud/blob/master/assets/fonts/PressStart2P/PressStart2P-Regular.ttf\?raw=true
 
     # Custom mask (Cloud)
-    videocloud $video 9.png en \
-    https://github.com/paramt/videocloud/blob/master/assets/fonts/PressStart2P/PressStart2P-Regular.ttf\?raw=true \
+    videocloud --url=$video --filepath=9.png en --mask=\
     https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png\?raw=true
 
     # Custom mask (YouTube logo)
-    videocloud $video 10.png en \
-    https://github.com/paramt/videocloud/blob/master/assets/fonts/PressStart2P/PressStart2P-Regular.ttf\?raw=true \
+    videocloud --url=$video --filepath=10.png --mask=\
     https://github.com/paramt/videocloud/blob/master/assets/masks/youtube.jpg\?raw=true
 done
