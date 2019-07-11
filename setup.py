@@ -41,7 +41,8 @@ setuptools.setup(
         "pillow==6.1.0",
         "wordcloud==1.5.0",
         "youtube-transcript-api==0.1.5",
-		"numpy==1.16.4"
+		"numpy==1.16.4",
+		"click==7.0"
     ],
     python_requires=">= 3.6",
 	entry_points={
