@@ -65,10 +65,10 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
 
 	return image
 
-def videocloud(url: str, language: list, font: str, mask: str):
+def videocloud(url: str, filepath:str, language: list, font: str, mask: str):
 	try:
 		video_id = get_video_id(url)
-		captions = get_cc(video_id, language)
+		captions = get_cc(video_id, [language])
 		image = wordcloud(captions, font, mask)
 
 	except ytcc.CouldNotRetrieveTranscript:
@@ -78,37 +78,7 @@ def videocloud(url: str, language: list, font: str, mask: str):
 		print(f"There was an error saving the videocloud. For more help visit https://www.param.me/videocloud#usage")
 		sys.exit(1)
 
-	return image
+	image.save(filepath)
 
-def main():
-	try:
-		video_id = sys.argv[1]
-	except:
-		print("Please specify a YouTube video link or video ID. For more help visit https://www.param.me/videocloud#usage")
-		sys.exit(1)
-
-	try:
-		filepath = sys.argv[2]
-	except IndexError:
-		filepath = "videocloud.png"
-
-	try:
-		language = [sys.argv[3]]
-	except IndexError:
-		language = ["en"]
-
-	try:
-		font = sys.argv[4]
-	except IndexError:
-		font = "https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf?raw=true"
-
-	try:
-		mask = sys.argv[5]
-	except IndexError:
-		mask = "https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true"
-
-	wordcloud = videocloud(video_id, language, font, mask)
 	filepath = os.path.abspath(filepath)
-	wordcloud.save(filepath)
-
 	print(f"Videocloud created in {filepath}")
