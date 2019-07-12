@@ -71,7 +71,7 @@ def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 	return image
 
 @click.command()
-@click.option("--url", type=str, help="Link to a YouTube video", required=True)
+@click.argument("url", type=str)
 @click.option("--filepath", default="videocloud.png", help="Where on the disk to save the videocloud")
 @click.option("--language", default="en", help="Language code of the captions")
 @click.option("--color", default="#d1d1d1", help="Hex code of the desired background color")
