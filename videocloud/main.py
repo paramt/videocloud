@@ -44,7 +44,7 @@ def get_cc(video_id: str, language: list) -> str:
 
 	return full_captions.lower()
 
-def wordcloud(words: str, font: str, mask: str) -> Image.Image:
+def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 	"""Generates a word cloud from a list of strings"""
 	font = download(font, "tempfont.ttf")
 	mask = download(mask, "tempmask.png")
@@ -55,7 +55,7 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
 			width = 1000,
 			height = 500,
 			font_path = font,
-			background_color = "#d1d1d1",
+			background_color = color,
 			mask = mask_data,
 		).generate(words)
 
@@ -74,6 +74,7 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
 @click.option("--url", type=str, help="Link to a YouTube video", required=True)
 @click.option("--filepath", default="videocloud.png", help="Where on the disk to save the videocloud")
 @click.option("--language", default="en", help="Language code of the captions")
+@click.option("--color", default="#d1d1d1", help="Hex code of the desired background color")
 @click.option("--font",
               default="https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf?raw=true",
 			  help="Link to a TTF font file")
@@ -81,11 +82,11 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
               default="https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true",
 			  help="Link to a PNG mask file")
 
-def videocloud(url: str, filepath:str, language: str, font: str, mask: str):
+def videocloud(url: str, filepath:str, language: str, color: str, font: str, mask: str):
 	try:
 		video_id = get_video_id(url)
 		captions = get_cc(video_id, [language])
-		image = wordcloud(captions, font, mask)
+		image = wordcloud(captions, font, mask, color)
 
 	except ytcc.CouldNotRetrieveTranscript:
 		print("The specified video either doesn't exist or doesn't have captions enabled. For more help visit https://www.param.me/videocloud#usage")
