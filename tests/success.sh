@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 videos=(https://www.youtube.com/watch\?v=MHTizZ_XcUM)
 
