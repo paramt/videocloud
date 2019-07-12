@@ -81,7 +81,7 @@ def wordcloud(words: str, font: str, mask: str) -> Image.Image:
               default="https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true",
 			  help="Link to a PNG mask file")
 
-def videocloud(url: str, filepath:str, language: list, font: str, mask: str):
+def videocloud(url: str, filepath:str, language: str, font: str, mask: str):
 	try:
 		video_id = get_video_id(url)
 		captions = get_cc(video_id, [language])
