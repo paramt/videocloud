@@ -16,7 +16,6 @@ def download(url: str, filepath: str) -> str:
 		urllib.request.urlretrieve(url, filepath)
 	except:
 		print("Unable to download the needed assets to generate the videocloud")
-		print("Please make sure that you have provided the correct URLs to any fonts/masks")
 		sys.exit(1)
 	else:
 		return filepath
