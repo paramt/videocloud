@@ -92,6 +92,16 @@ svg {
     line-height: 1.6
 }
 
+.options{
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: var(--code-color);
+}
+
+.options h2, .options p{
+    text-align: left;
+}
+
 pre{
     display: inline-block;
     background-color: var(--code-color);
