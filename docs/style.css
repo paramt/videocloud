@@ -102,6 +102,10 @@ svg {
     text-align: left;
 }
 
+img.example{
+    width: 295px;
+}
+
 pre{
     display: inline-block;
     background-color: var(--code-color);
