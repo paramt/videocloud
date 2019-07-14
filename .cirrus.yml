@@ -14,5 +14,5 @@ run_tests_task:
   pip_cache:
     folder: ~/.cache/pip
     fingerprint_script: echo $PYTHON_VERSION
-    populate_script: python3 -m pip install --upgrade setuptools wheel twine
+    populate_script: python3 setup.py install
   run_tests_script: bash tests/success.sh
