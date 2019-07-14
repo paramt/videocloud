@@ -2,8 +2,8 @@ import setuptools
 
 long_description = '''
 # VideoCloud
-[![License](https://img.shields.io/github/license/paramt/videocloud.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/paramt/videocloud.svg?branch=master)](https://travis-ci.org/paramt/videocloud)
+[![License](https://img.shields.io/github/license/paramt/videocloud.svg)](https://github.com/paramt/videocloud/blob/master/LICENSE)
 
 Generate word clouds from YouTube video captions
 
