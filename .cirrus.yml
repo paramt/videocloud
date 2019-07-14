@@ -2,8 +2,17 @@ container:
   image: python:slim
 
 build_package_test_task:
+  name: Build Package
   pip_cache:
     folder: ~/.cache/pip
     fingerprint_script: echo $PYTHON_VERSION
     populate_script: python3 -m pip install --upgrade setuptools wheel twine
-  build_package_test_script: python3 setup.py sdist bdist_wheel bdist_egg
+  build_package_script: python3 setup.py sdist bdist_wheel bdist_egg
+
+run_tests_task:
+  name: Run Tests
+  pip_cache:
+    folder: ~/.cache/pip
+    fingerprint_script: echo $PYTHON_VERSION
+    populate_script: python3 -m pip install --upgrade setuptools wheel twine
+  run_tests_script: bash tests/success.sh
