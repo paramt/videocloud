@@ -28,11 +28,25 @@
           <pre>pip install videocloud</pre>
 
           <h1 id="usage">Usage</h1>
-          <pre>videocloud &lt;link to YouTube video&gt; [filepath] [language code] [font] [mask]</pre>
-          <p>If no filepath is given, the wordcloud will be generated as <code>videocloud.png</code> in the current directory
-          The lanuage code defaults to <code>en</code> and the fontpath defaults to <a href="https://github.com/paramt/videocloud/blob/v2.4/assets/fonts/NotoSans/NotoSans.ttf">Noto Sans</a>.
-          To use a custom font, provide the HTTP link for its TTF file. Similarly, you can provide an HTTP link to a PNG mask file. The mask defaults to <a href="https://github.com/paramt/videocloud/blob/v2.5/assets/masks/cloud.png">a generic cloud</a>.</p>
-          <br>
+          <pre>videocloud &lt;link to YouTube video&gt; [options]</pre>
+          <pre>videocloud youtu.be/MHTizZ_XcUM &#8209;&#8209;filepath=cloud.png</pre>
+
+          <br><br>
+
+          <h2 id="filepath">--filepath</h2>
+          <p>Where on disk to save the generated videocloud<br>Default: videocloud.png</p>
+
+          <h2 id="language">--language</h2>
+          <p>2-letter language code of the captions<br>Default: en</p>
+
+          <h2 id="color">--color</h2>
+          <p>Hex color code of the videocloud's background color<br>Default: #d1d1d1</p>
+
+          <h2 id="font">--font</h2>
+          <p>Link to a TTF font file<br>Default: <a href="https://github.com/paramt/videocloud/tree/master/assets/fonts/NotoSans/NotoSans.ttf">Noto Sans</a></p>
+
+          <h2 id="mask">--mask</h2>
+          <p>Link to a PNG mask file<br>Default: <a href="https://github.com/paramt/videocloud/tree/master/assets/masks/cloud.png">Cloud</a></p>
 
           <h1 id="development">Development</h1>
           <p><a href="https://github.com/paramt/videocloud/issues/new?assignees=paramt&labels=bug&template=bug_report.md&title=Bug+report%3A+">Report a bug</a> or <a href="https://github.com/paramt/videocloud/issues/new?assignees=paramt&labels=enhancement&template=feature_request.md&title=Feature+request%3A+">request a new feature</a><br>
