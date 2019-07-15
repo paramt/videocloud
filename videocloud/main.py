@@ -32,10 +32,10 @@ def get_video_id(url: str) -> str:
 
 def get_cc(video_id: str, language: list) -> str:
 	"""Returns captions from a YouTube video in a word-separated list"""
-	try:
-		captions = ytcc.get_transcript(video_id, languages=language)
-	except:
-		captions = ytcc.get_transcript(video_id)
+
+	# Attempt to get captions from the requested language, English, or the default language in descending priority
+	captions = ytcc.get_transcript(video_id, languages=[language, "en", None])
+
 	full_captions = ""
 
 	for caption in captions:
