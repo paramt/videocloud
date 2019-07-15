@@ -59,11 +59,9 @@ def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 		).generate(words)
 
 		image = wordcloud.to_image()
-
 	except:
 		print(f"There was an unknown error generating the videocloud.")
 		sys.exit(1)
-
 	finally:
 		delete(font, mask)
 
@@ -86,7 +84,6 @@ def videocloud(url: str, filepath:str, language: str, color: str, font: str, mas
 		video_id = get_video_id(url)
 		captions = get_cc(video_id, [language])
 		image = wordcloud(captions, font, mask, color)
-
 	except ytcc.CouldNotRetrieveTranscript:
 		print("The specified video either doesn't exist or doesn't have captions enabled. For more help visit https://www.param.me/videocloud#usage")
 		sys.exit(1)
