@@ -30,7 +30,7 @@ def delete(*files) -> bool:
 def get_video_id(url: str) -> str:
     return(url[-11:])
 
-def get_cc(video_id: str, language: list) -> str:
+def get_cc(video_id: str, language: str) -> str:
 	"""Returns captions from a YouTube video in a word-separated list"""
 
 	# Attempt to get captions from the requested language, English, or the default language in descending priority
@@ -82,7 +82,7 @@ def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 def videocloud(url: str, filepath:str, language: str, color: str, font: str, mask: str):
 	try:
 		video_id = get_video_id(url)
-		captions = get_cc(video_id, [language])
+		captions = get_cc(video_id, language)
 		image = wordcloud(captions, font, mask, color)
 	except ytcc.CouldNotRetrieveTranscript:
 		print("The specified video either doesn't exist or doesn't have captions enabled. For more help visit https://www.param.me/videocloud#usage")
