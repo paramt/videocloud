@@ -40,7 +40,7 @@ setuptools.setup(
     install_requires=[
         "pillow==6.1.0",
         "wordcloud==1.5.0",
-        "youtube-transcript-api==0.1.5",
+        "youtube-transcript-api==0.1.6",
 		"numpy==1.16.4",
 		"click==7.0"
     ],
