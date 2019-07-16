@@ -84,8 +84,9 @@ def videocloud(url: str, filepath:str, language: str, color: str, font: str, mas
 		video_id = get_video_id(url)
 		captions = get_cc(video_id, language)
 		image = wordcloud(captions, font, mask, color)
-	except ytcc.CouldNotRetrieveTranscript:
+	except ytcc.CouldNotRetrieveTranscript as e:
 		print("The specified video either doesn't exist or doesn't have captions enabled. For more help visit https://www.param.me/videocloud#usage")
+		print(e)
 		sys.exit(1)
 	except IOError:
 		print(f"There was an error saving the videocloud. For more help visit https://www.param.me/videocloud#usage")
