@@ -7,12 +7,4 @@ build_package_test_task:
     folder: ~/.cache/pip
     fingerprint_script: echo $PYTHON_VERSION
     populate_script: python3 -m pip install --upgrade setuptools wheel twine
-  build_package_script: python3 setup.py sdist bdist_wheel bdist_egg
-
-run_tests_task:
-  name: Run Tests
-  pip_cache:
-    folder: ~/.cache/pip
-    fingerprint_script: echo $PYTHON_VERSION
-    populate_script: python3 setup.py install
-  run_tests_script: bash tests/success.sh
+  build_package_script: python3 setup.py sdist bdist_wheel bdist_egg; bash tests/success.sh
