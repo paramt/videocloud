@@ -79,7 +79,10 @@ def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 		print(f"There was an unknown error generating the videocloud.")
 		sys.exit(1)
 	finally:
-		delete(font, mask)
+		if(font == "tempfont.ttf"):
+			delete(font)
+		if(mask == "tempmask.png"):
+			delete(mask)
 
 	return image
 
