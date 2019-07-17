@@ -29,7 +29,7 @@ def updated() -> bool:
 def download(url: str, filepath: str) -> str:
 	try:
 		with open(filepath, "wb") as f:
-			f.write(request.get(url, filepath).content)
+			f.write(requests.get(url, filepath).content)
 	except:
 		print("Unable to download the needed assets to generate the videocloud")
 		sys.exit(1)
