@@ -1,5 +1,6 @@
 import logging
 import os
+import pkg_resources
 import sys
 import urllib.request
 import click
@@ -10,6 +11,21 @@ from youtube_transcript_api import YouTubeTranscriptApi as ytcc
 
 # Mute youtube_transcript_api stdout
 logging.disable(logging.CRITICAL)
+
+def updated() -> bool:
+	installed = pkg_resources.get_distribution("videocloud").version
+
+	# Attempt to check the latest version of videocloud
+	# If unable to do so, continue without prompting the user to update
+	# This is to prevent any false positives
+
+	try:
+		with urllib.request.urlopen("https://thakkaha.dev.fast.sheridanc.on.ca/pme/videocloud/version") as response:
+			latest = response
+	except:
+		latest = installed
+
+	return True if installed == latest else False
 
 def download(url: str, filepath: str) -> str:
 	try:
@@ -95,3 +111,6 @@ def videocloud(url: str, filepath:str, language: str, color: str, font: str, mas
 
 	filepath = os.path.abspath(filepath)
 	print(f"Videocloud created in {filepath}")
+
+	if not updated():
+		print("A newer version of videocloud is available. Use 'pip install videocloud --upgrade' to update to the latest version")
