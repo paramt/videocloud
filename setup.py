@@ -51,7 +51,5 @@ setuptools.setup(
             'videocloud=videocloud.main:videocloud'
         ]
     },
-	package_data = {
-		"assets": ["*"]
-	}
+	include_package_data=True
 )
