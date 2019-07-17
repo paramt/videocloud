@@ -42,7 +42,8 @@ setuptools.setup(
         "wordcloud==1.5.0",
         "youtube-transcript-api==0.1.6",
 		"numpy==1.16.4",
-		"click==7.0"
+		"click==7.0",
+		"requests==2.22.0"
     ],
     python_requires=">= 3.6",
 	entry_points={
