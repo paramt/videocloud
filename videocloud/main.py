@@ -2,10 +2,10 @@ import logging
 import os
 import pkg_resources
 import sys
-import urllib.request
 import click
 import numpy as np
 import PIL.Image as Image
+import requests
 from wordcloud import WordCloud
 from youtube_transcript_api import YouTubeTranscriptApi as ytcc
 
@@ -20,8 +20,7 @@ def updated() -> bool:
 	# This is to prevent any false positives
 
 	try:
-		with urllib.request.urlopen("https://thakkaha.dev.fast.sheridanc.on.ca/pme/videocloud/version") as response:
-			latest = response
+		latest = requests.get("https://thakkaha.dev.fast.sheridanc.on.ca/pme/videocloud/version").content
 	except:
 		latest = installed
 
@@ -29,7 +28,8 @@ def updated() -> bool:
 
 def download(url: str, filepath: str) -> str:
 	try:
-		urllib.request.urlretrieve(url, filepath)
+		with open(filepath, "wb") as f:
+			f.write(request.get(url, filepath).content)
 	except:
 		print("Unable to download the needed assets to generate the videocloud")
 		sys.exit(1)
