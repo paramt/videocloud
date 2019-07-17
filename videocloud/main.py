@@ -20,7 +20,7 @@ def updated() -> bool:
 	# This is to prevent any false positives
 
 	try:
-		latest = requests.get("https://thakkaha.dev.fast.sheridanc.on.ca/pme/videocloud/version").content
+		latest = requests.get("https://thakkaha.dev.fast.sheridanc.on.ca/pme/videocloud/version").content.decode("utf-8")
 	except:
 		latest = installed
 
