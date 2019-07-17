@@ -50,5 +50,8 @@ setuptools.setup(
         'console_scripts': [
             'videocloud=videocloud.main:videocloud'
         ]
-    }
+    },
+	package_data = {
+		"assets": ["*"]
+	}
 )
