@@ -61,8 +61,8 @@ def get_cc(video_id: str, language: str) -> str:
 
 def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 	"""Generates a word cloud from a list of strings"""
-	font = download(font, "tempfont.ttf") if font else "assets/font/NotoSans.ttf"
-	mask = download(mask, "tempmask.png") if mask else "assets/cloud.png"
+	font = download(font, "tempfont.ttf") if font else pkg_resources.resource_filename("videocloud", "assets/font/NotoSans.ttf")
+	mask = download(mask, "tempmask.png") if mask else pkg_resources.resource_filename(__name__, "assets/cloud.png")
 	mask_data = np.array(Image.open(mask))
 
 	try:
