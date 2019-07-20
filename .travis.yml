@@ -8,7 +8,8 @@ python:
 
 install:
     - pip install matplotlib
-    - pip install /videocloud
+    - python setup.py install
+    - python setup.py sdist
 
 script:
     - bash tests/success.sh
