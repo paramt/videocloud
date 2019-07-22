@@ -61,8 +61,8 @@ def get_cc(video_id: str, language: str) -> str:
 
 def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 	"""Generates a word cloud from a list of strings"""
-	font = download(font, "tempfont.ttf") if font else pkg_resources.resource_filename("videocloud", "assets/font/NotoSans.ttf")
-	mask = download(mask, "tempmask.png") if mask else pkg_resources.resource_filename(__name__, "assets/cloud.png")
+	font = download(font, "tempfont.ttf")
+	mask = download(mask, "tempmask.png")
 	mask_data = np.array(Image.open(mask))
 
 	try:
@@ -79,10 +79,7 @@ def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 		print(f"There was an unknown error generating the videocloud.")
 		sys.exit(1)
 	finally:
-		if(font == "tempfont.ttf"):
-			delete(font)
-		if(mask == "tempmask.png"):
-			delete(mask)
+		delete(font, mask)
 
 	return image
 
@@ -92,10 +89,10 @@ def wordcloud(words: str, font: str, mask: str, color: str) -> Image.Image:
 @click.option("--language", default="en", help="Language code of the captions")
 @click.option("--color", default="#d1d1d1", help="Hex code of the desired background color")
 @click.option("--font",
-              type=str,
+              default="https://github.com/paramt/videocloud/blob/master/assets/fonts/NotoSans/NotoSans.ttf?raw=true",
 			  help="Link to a TTF font file")
 @click.option("--mask",
-              type=str,
+              default="https://github.com/paramt/videocloud/blob/master/assets/masks/cloud.png?raw=true",
 			  help="Link to a PNG mask file")
 
 def videocloud(url: str, filepath:str, language: str, color: str, font: str, mask: str):

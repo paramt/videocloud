@@ -50,6 +50,5 @@ setuptools.setup(
         'console_scripts': [
             'videocloud=videocloud.main:videocloud'
         ]
-    },
-	include_package_data=True
+    }
 )
