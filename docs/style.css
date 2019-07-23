@@ -105,6 +105,7 @@ svg {
 
 img.example{
     width: 295px;
+    border-radius: 10px;
 }
 
 pre{
