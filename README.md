@@ -24,13 +24,39 @@ pip install videocloud
 ## Usage
 
 ```
-videocloud <link to YouTube video> [filepath] [language code] [font]
+videocloud <link to YouTube video> [options]
 ```
 
-If no filepath is given, the wordcloud will be generated as <kbd>videocloud.png</kbd> in the current directory.
-The lanuage code defaults to <kbd>en</kbd> and the fontpath defaults to [Noto Sans](assets/fonts/NotoSans).
-To use a custom font, provide the HTTP link for its TTF file. Similarly, you can provide an HTTP link to a PNG mask file.
-The mask defaults to [a generic cloud](https://github.com/paramt/videocloud/blob/v2.5/assets/masks/cloud.png).
+```
+videocloud www.youtu.be/MHTizZ_XcUM --language=es --color=#eee
+```
+
+### Options
+
+#### `--filepath`
+Where on disk to save the generated videocloud
+
+Default: <kbd>videocloud.png</kbd>
+
+#### `--language`
+2-letter language code of the captions
+
+Default: <kbd>en</kbd>
+
+#### `--color`
+Hex color code of the videocloud's background color
+
+Default: <kbd>#d1d1d1</kbd>
+
+#### `--font`
+Link to a TTF font file
+
+Default: [Noto Sans](assets/fonts/NotoSans/NotoSans.ttf)
+
+#### `--mask`
+Link to a PNG mask file
+
+Default: [Cloud](https://github.com/paramt/videocloud/blob/v2.5/assets/masks/cloud.png)
 
 ## Examples
 
