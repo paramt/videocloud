@@ -65,7 +65,7 @@ setuptools.setup(
 	long_description_content_type="text/markdown",
     packages=["videocloud"],
     install_requires=[
-        "pillow==6.2.0",
+        "pillow==6.2.1",
         "wordcloud==1.5.0",
         "youtube-transcript-api==0.1.9",
 		"numpy==1.17.3",
