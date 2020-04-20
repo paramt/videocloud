@@ -68,7 +68,7 @@ setuptools.setup(
         "pillow==7.1.1",
         "wordcloud==1.6.0",
         "youtube-transcript-api==0.3.1",
-		"numpy==1.18.2",
+		"numpy==1.18.3",
 		"click==7.1.1",
 		"requests==2.23.0"
     ],
