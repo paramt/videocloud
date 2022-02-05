@@ -69,7 +69,7 @@ setuptools.setup(
         "wordcloud==1.8.1",
         "youtube-transcript-api==0.3.1",
 		"numpy==1.22.2",
-		"click==8.0.0",
+		"click==8.0.3",
 		"requests==2.25.1"
     ],
     python_requires=">= 3.6",
