@@ -70,7 +70,7 @@ setuptools.setup(
         "youtube-transcript-api==0.4.3",
 		"numpy==1.22.2",
 		"click==8.0.4",
-		"requests==2.27.1"
+		"requests==2.28.2"
     ],
     python_requires=">= 3.6",
 	entry_points={
